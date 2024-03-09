@@ -1,0 +1,15 @@
+todo_list = Todo.new()
+|> Todo.add_entry(%{date: ~D[2023-12-19], title: "Dentist"})
+|> Todo.add_entry(%{date: ~D[2023-12-20], title: "Shopping"})
+|> Todo.add_entry(%{date: ~D[2023-12-19], title: "Movies"})
+
+Todo.update_entry(todo_list, 1, &Map.put(&1, :title, "ajsdkasjdkas"))
+Todo.delete_entry(todo_list, 1)
+
+entries = [
+  %{date: ~D[2023-12-19], title: "Dentist"},
+  %{date: ~D[2023-12-20], title: "Shopping"},
+  %{date: ~D[2023-12-19], title: "Movies"}
+]
+
+todo_list = Todo.new(entries)
