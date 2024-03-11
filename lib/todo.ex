@@ -13,7 +13,9 @@ defmodule Todo do
 
   def update_entry(todo_list, entry_id, update_function) do
     case Map.fetch(todo_list.entries, entry_id) do
-      :error -> todo_list
+      :error ->
+        todo_list
+
       {:ok, old_entry} ->
         new_entry = update_function.(old_entry)
         new_entries = Map.put(todo_list.entries, new_entry.id, new_entry)
