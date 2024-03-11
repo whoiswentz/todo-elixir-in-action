@@ -13,3 +13,5 @@ entries = [
 ]
 
 todo_list = Todo.new(entries)
+
+Enum.into(entries, Todo.new())
