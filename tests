@@ -15,3 +15,9 @@ entries = [
 todo_list = Todo.new(entries)
 
 Enum.into(entries, Todo.new())
+
+{:ok, todo_server} = Todo.Server.start(nil)
+
+Todo.Server.add_entry(%{date: ~D[2023-12-19], title: "Dentist"})
+
+Todo.Server.entries(~D[2023-12-19])
