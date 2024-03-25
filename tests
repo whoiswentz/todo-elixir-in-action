@@ -27,6 +27,7 @@ Todo.Cache.server_process(cache, "Bob's list")
 Todo.Cache.server_process(cache, "Bob's list")
 Todo.Cache.server_process(cache, "Alice's list")
 
+{:ok, cache} = Todo.Cache.start()
 bobs_list = Todo.Cache.server_process(cache, "Bob's list")
 Todo.Server.add_entry(
   bobs_list,
